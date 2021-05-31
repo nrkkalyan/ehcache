@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd" updateCheck="false">
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ehcache.xsd" updateCheck="false">
 
 	<diskStore path="java.io.tmpdir" />
 
  
     <cacheManagerPeerProviderFactory class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory"
                           properties="peerDiscovery=manual,
-                          rmiUrls=//172.17.0.27:40001"/>
+                          rmiUrls=//172.17.0.20:40001"/>
 
 
 	<cacheManagerPeerListenerFactory class="net.sf.ehcache.distribution.RMICacheManagerPeerListenerFactory"
-		properties="hostName=, port=40001, socketTimeoutMillis=" />
+		properties="hostName=172.17.0.10, port=40001, socketTimeoutMillis=" />
 
 
 	<defaultCache maxElementsInMemory="1" eternal="false" overflowToDisk="false" timeToIdleSeconds="180" timeToLiveSeconds="180">
 	</defaultCache>
 
-	<cache name="TestCache" maxEntriesLocalHeap="1000" eternal="false" overflowToDisk="false" timeToIdleSeconds="0" timeToLiveSeconds="900">
+	<cache name="employeeCache" maxEntriesLocalHeap="1000" eternal="false" overflowToDisk="false" timeToIdleSeconds="0" timeToLiveSeconds="900">
 		<cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory" />
 	</cache>
 
