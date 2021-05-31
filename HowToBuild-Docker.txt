@@ -1,0 +1,4 @@
+each module must be built
+
+$ mvn clean install
+$ docker build -t nrk/<module-name> .
