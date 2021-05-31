@@ -2,7 +2,7 @@ each module must be built
 
 mvn clean install
 docker build -t nrkkalyan/ehcache-ex .
-docker run --rm -p 8070:8070 nrkkalyan/ehcache-ex
+docker run --rm -p 8070:8070 -p 4446:4446 -p 40001:40001 nrkkalyan/ehcache-ex
 
 
 
@@ -10,6 +10,6 @@ $ mvn clean install
 
 $ docker build -t nrkkalyan/ehcache-ex .
 
-$ docker run --rm -p 8070:8070 nrkkalyan/ehcache-ex
+$ docker run --rm -p 8070:8070 -p 4446:4446 -p 40001:40001 nrkkalyan/ehcache-ex
 
 $ docker image push nrkkalyan/ehcache-ex
