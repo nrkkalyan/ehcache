@@ -10,6 +10,6 @@ $ mvn clean install
 
 $ docker build -t nrkkalyan/ehcache-ex .
 
-$ docker run -p 8070:8070 nrkkalyan/ehcache-ex
+$ docker run --rm -p 8070:8070 nrkkalyan/ehcache-ex
 
 $ docker image push nrkkalyan/ehcache-ex
