@@ -6,7 +6,7 @@
  
     <cacheManagerPeerProviderFactory class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory"
                           properties="peerDiscovery=manual,
-                          rmiUrls=//host02:40002"/>
+                          rmiUrls=//host02:40001"/>
 
 
 	<cacheManagerPeerListenerFactory class="net.sf.ehcache.distribution.RMICacheManagerPeerListenerFactory"
