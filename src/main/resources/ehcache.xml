@@ -17,7 +17,7 @@
     <cacheManagerPeerListenerFactory
          class="net.sf.ehcache.distribution.RMICacheManagerPeerListenerFactory"
          properties="hostName=,
-                     port=,
+                     port=40001,
                      socketTimeoutMillis=5000"/>
                      
     <cache name="employeeCache"
