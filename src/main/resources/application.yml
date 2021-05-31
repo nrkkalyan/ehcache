@@ -1,0 +1,7 @@
+server.port: 8070
+#spring.cache.ehcache.config: classpath:ehcache-rmi.xml
+spring.application.name: testehcache2
+
+logging.config: classpath:logback-splunk-and-console.xml
+logging.level.net.sf.ehcache: DEBUG
+
