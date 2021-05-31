@@ -6,11 +6,11 @@
  
     <cacheManagerPeerProviderFactory class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory"
                           properties="peerDiscovery=manual,
-                          rmiUrls=//172.17.0.19:40001"/>
+                          rmiUrls=//host02:40002"/>
 
 
 	<cacheManagerPeerListenerFactory class="net.sf.ehcache.distribution.RMICacheManagerPeerListenerFactory"
-		properties="hostName=172.17.0.13, port=40001, socketTimeoutMillis=" />
+		properties="hostName=host01, port=40001, socketTimeoutMillis=" />
 
 
 	<defaultCache maxElementsInMemory="1" eternal="false" overflowToDisk="false" timeToIdleSeconds="180" timeToLiveSeconds="180">
