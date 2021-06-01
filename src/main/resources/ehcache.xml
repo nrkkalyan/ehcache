@@ -1,31 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-		 xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd" 
-		 updateCheck="false"
-		 monitoring="autodetect"
-         dynamicConfig="true">
-         
-         
-    <cacheManagerPeerProviderFactory
-         class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory"
-         properties="peerDiscovery=automatic,
-                     multicastGroupAddress=230.0.0.1,
-                     multicastGroupPort=4446,
-                     timeToLive=32"/>
-                     
-    <cacheManagerPeerListenerFactory
-         class="net.sf.ehcache.distribution.RMICacheManagerPeerListenerFactory"
-         properties="hostName=,
-                     port=40001,
-                     socketTimeoutMillis=5000"/>
-                     
-    <cache name="employeeCache"
-           maxEntriesLocalHeap="1000"
-           eternal="true"
-           overflowToDisk="false"
-           memoryStoreEvictionPolicy="LFU">
-        <cacheEventListenerFactory
-            class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"/>
-    </cache>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ehcache.xsd" updateCheck="false" monitoring="autodetect"
+	dynamicConfig="true">
+
+
+
+	<cacheManagerPeerProviderFactory class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory"
+		properties="peerDiscovery=automatic, multicastGroupAddress=230.0.0.1, multicastGroupPort=4446, timeToLive=32" />
+
+	<cacheManagerPeerListenerFactory class="net.sf.ehcache.distribution.RMICacheManagerPeerListenerFactory"
+		properties="port=40001,socketTimeoutMillis=300000" />
+
+
+	<cache name="employeeCache" maxElementsInMemory="1000" eternal="false" overflowToDisk="false" diskPersistent="false" timeToIdleSeconds="0" timeToLiveSeconds="1000"
+		memoryStoreEvictionPolicy="LRU">
+		<cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory" />
+		<bootstrapCacheLoaderFactory class="net.sf.ehcache.distribution.RMIBootstrapCacheLoaderFactory" />
+	</cache>
 </ehcache>
